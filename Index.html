@@ -459,16 +459,17 @@
         if (!audio) {
           // This is just a placeholder - you would need to replace with an actual music file
           audio = new Audio();
-          // audio.src = "birthday-music.mp3"; // Replace with your music file path
-          audio.loop = true;
+          // Replace with your audio file path
+          audio.src = "/music.mp3"; // Example of an audio file path
+          audio.loop = true; // Ensure it loops
         }
 
         if (isPlaying) {
           audio.pause();
-          toggleMusic.innerHTML = '<span class="music-icon">♫</span>';
+          toggleMusic.innerHTML = '<span class="music-icon">♫</span>'; // Play icon
         } else {
           audio.play().catch((e) => console.log("Audio play failed:", e));
-          toggleMusic.innerHTML = '<span class="music-icon">⏸</span>';
+          toggleMusic.innerHTML = '<span class="music-icon">⏸</span>'; // Pause icon
         }
 
         isPlaying = !isPlaying;
